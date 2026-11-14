@@ -29,12 +29,20 @@ app.secret_key = "supersecretkey"
 # ------------------ SESSION EXPIRY ------------------
 app.permanent_session_lifetime = timedelta(minutes=90)  # expire after 90 minutes
 
+
 @app.before_request
 def make_session_permanent():
     session.permanent = True
-    if request.endpoint not in ('login', 'home', 'static'):
+
+    # Public routes that do not require login
+    public_endpoints = ('login', 'home', 'static', 'api_analyze')
+
+    if request.endpoint not in public_endpoints:
         if 'user' not in session and 'pending_user' not in session:
-            return render_template("login.html", error="Session expired, please log in again.")
+            return render_template(
+                "login.html",
+                error="Session expired, please log in again."
+            )
 # ----------------------------------------------------
 
 init_db()
