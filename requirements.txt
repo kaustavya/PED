@@ -1,0 +1,18 @@
+# Web app
+flask
+
+# Data handling
+numpy
+pandas
+
+# Machine learning
+scikit-learn
+joblib
+
+# URL / web feature extraction
+requests
+beautifulsoup4
+lxml
+tldextract
+python-whois
+validators
