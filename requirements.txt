@@ -1,16 +1,20 @@
 # Web framework / server
-django
+flask
 gunicorn
-whitenoise
 
 # Data handling
 numpy
 pandas
 
-# Machine learning / NLP (email phishing detection)
+# Machine learning / NLP
 scikit-learn
 joblib
 nltk
+
+# Features used by the app
+reportlab
+email-validator
+dkimpy
 
 # Utilities
 requests
