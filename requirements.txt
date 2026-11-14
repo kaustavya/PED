@@ -1,18 +1,18 @@
-# Web app
-flask
+# Web framework / server
+django
+gunicorn
+whitenoise
 
 # Data handling
 numpy
 pandas
 
-# Machine learning
+# Machine learning / NLP (email phishing detection)
 scikit-learn
 joblib
+nltk
 
-# URL / web feature extraction
+# Utilities
 requests
 beautifulsoup4
 lxml
-tldextract
-python-whois
-validators
