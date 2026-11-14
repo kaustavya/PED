@@ -305,8 +305,11 @@ def api_analyze():
     proba = ml_model.predict_proba(X)[0]
     verdict_ml = ml_model.classes_[proba.argmax()]
     confidence = round(proba.max() * 100, 2)
-    risk_score = "High Risk" if confidence < 40 or confidence > 70 else "Low Risk"
-
+    risk_score = (
+    "High Risk"
+    if verdict_ml == "Phishing" or verdict_rule == "Phishing"
+    else "Low Risk"
+)
     return jsonify({
         "verdict_rule": verdict_rule,
         "verdict_ml": verdict_ml,
